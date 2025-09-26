@@ -14,7 +14,7 @@ import UserManagement from '../../features/user-management/UserManagement';
 
 const Layout = () => {
   const [activeView, setActiveView] = useState<ActiveView>('data-management');
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
 
   const renderContent = () => {
     switch (activeView) {
