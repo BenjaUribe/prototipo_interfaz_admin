@@ -15,7 +15,7 @@
 .content {
   flex: 1;
   padding: 2rem;
-  background-color: #343434;
+  background-color: #1d1d1b;
   overflow-y: auto;
   transition: margin-left 0.3s ease;
 }

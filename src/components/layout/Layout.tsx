@@ -37,7 +37,7 @@ const Layout = () => {
 
   return (
     <div className="layout">
-      <Header />
+      <Header sidebarCollapsed={sidebarCollapsed} />
       <div className="layout-body">
         <Sidebar 
           activeView={activeView}
