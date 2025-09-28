@@ -1,15 +1,93 @@
+.data-feature{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #1d1d1b;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+}
+
+/* Nueva barra de herramientas superior */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #1d1d1b;
+    border-bottom: 1px solid #f2f2f2;
+    border-radius: 5px 5px 0 0;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+/* Secciones de la toolbar (izquierda y derecha) */
+.toolbar-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toolbar-section-left {
+    justify-content: flex-start;
+}
+
+.toolbar-section-right {
+    justify-content: flex-end;
+}
+
+/* Etiquetas de texto al lado de los botones */
+.toolbar-label {
+    color: #f2f2f2;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.toolbar-center {
+    flex: 1;
+    text-align: center;
+    color: #f2f2f2;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.toolbar-button {
+    background: none;
+    border: 1px solid #f2f2f2;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #f2f2f2;
+    transition: all 0.2s ease;
+    min-width: 40px;
+}
+
+.toolbar-button:hover {
+    background-color: #2a3176;
+    transform: translateY(-1px);
+}
+
+/* Container principal que contiene las sidebars y data-container */
+.main-content {
+    display: flex;
+    flex: 1;
+    gap: 0;
+}
+
 .data-container {
-    flex: 1; /* Ocupa el espacio restante */
+    flex: 1;
     min-width: 200px;
-    background-color: #1d1d1b;   
+    background-color: #1d1d1b;
     border-radius: 5px;
     overflow-y: auto;
     padding: 2rem;
     order: 2;
     margin: 0.5rem;
-    transition: margin 0.3s ease;
+    transition: all 0.3s ease;
 }
 
+/* Reglas de ocultación para el contenido central */
 .data-feature:has(.sidebar-left:not(.collapsed)) .data-container,
 .data-feature:has(.sidebar-right:not(.collapsed)) .data-container {
     width: 0;
@@ -20,16 +98,22 @@
     overflow: hidden;
 }
 
-.data-feature{
-    display: flex;
-    height: 100%;
-    gap: 0.5rem; /* Reducir el gap */
-    background-color: #1d1d1b;
-    border: 1px solid #f2f2f2;
-    border-radius: 5px;
+/* Forzar sidebar contraria a colapsarse cuando una se expande */
+.data-feature:has(.sidebar-left:not(.collapsed)) .sidebar-right {
+    width: 60px !important;
+    min-width: 60px;
+    max-width: 60px;
 }
 
-.sidebar-left{
+.data-feature:has(.sidebar-right:not(.collapsed)) .sidebar-left {
+    width: 60px !important;
+    min-width: 60px;
+    max-width: 60px;
+}
+
+/* Estilos base para sidebars */
+.sidebar-left,
+.sidebar-right {
     width: 60px;
     flex-shrink: 0;
     background-color: #1d1d1b;
@@ -37,187 +121,119 @@
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    border-right: 1px solid #f2f2f2;
     border-radius: 8px;
     margin: 0.5rem;
-    height: calc(100% - 1rem);
+    height: auto;
+}
+
+.sidebar-left {
+    border-right: 1px solid #f2f2f2;
     order: 1;
 }
 
-.sidebar-left:not(.collapsed) {
-    width: 90%; /* 90% del ancho total */
-    flex-shrink: 0;
-}
-
-.sidebar-left * {
-  transition: all 0.3s ease;
-}
-
-.sidebar-left .sidebar-title {
-  transform: rotate(180deg);
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  color: #f2f2f2;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 2rem 0;
-}
-
-.collapse-button{
-  background: none;
-  border: 1px solid #f2f2f2;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  color: #f2f2f2;
-  width: auto; /* Cambié de 100% a auto */
-  box-sizing: border-box;
-  align-self: flex-end; /* Alineación interna por defecto */
-}
-
-.collapse-button:hover {
-  background-color: #2a3176;
-}
-
-.sidebar-left.collapsed .sidebar-title {
-  opacity: 1;
-}
-
-.sidebar-left.collapsed .sidebar-content {
-  opacity: 0;
-  display: none;
-}
-
-.sidebar-left .sidebar-content {
-    flex: 1;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    padding: 1rem 0;
-}
-
-.sidebar-left .sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.sidebar-left .sidebar-btn {
-    background: none;
-    border: 1px solid #555;
-    color: #f2f2f2;
-    padding: 0.8rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.2s ease;
-    font-size: 0.85rem;
-}
-
-.sidebar-right{
-    width: 60px;
-    flex-shrink: 0;
-    background-color: #1d1d1b;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
+.sidebar-right {
     border-left: 1px solid #f2f2f2;
-    border-radius: 8px;
-    margin: 0.5rem;
-    height: calc(100% - 1rem);
     order: 3;
 }
 
+/* Estilos cuando están expandidas */
+.sidebar-left:not(.collapsed),
 .sidebar-right:not(.collapsed) {
-    width: 90%; /* 90% del ancho total */
+    width: 90%;
     flex-shrink: 0;
+    max-height: calc(100vh - 120px); /* Limitar la altura máxima de la sidebar */
+    overflow: hidden; /* Ocultar overflow de la sidebar */
 }
 
-.sidebar-right * {
-  transition: all 0.3s ease;
-}
-
-.sidebar-right .sidebar-title {
-  transform: rotate(180deg);
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  color: #f2f2f2;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 2rem 0;
-}
-
-.sidebar-right.collapsed .sidebar-title {
-  opacity: 1;
-}
-
-.sidebar-right .sidebar-content {
-  flex: 1;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  padding: 1rem 0;
-}
-
-.sidebar-right.collapsed .sidebar-content {
-  opacity: 0;
-  display: none;
-}
-
-/* Estados colapsados - uniformes */
+/* Estados colapsados */
 .sidebar-left.collapsed,
 .sidebar-right.collapsed {
     width: 60px !important;
     min-width: 60px;
     max-width: 60px;
-    overflow: hidden;
+    overflow: visible;
     padding: 1rem 0.3rem;
+    position: relative;
 }
 
-/* Botones en estado colapsado - centrados y más pequeños */
-.sidebar-left.collapsed .collapse-button,
-.sidebar-right.collapsed .collapse-button {
-    align-self: center; /* Centrados cuando están colapsadas */
-    padding: 0.4rem;
-    font-size: 0.8rem;
-    width: auto; /* Ancho automático, no 100% */
-    box-sizing: border-box;
+/* Ocultar contenido cuando están colapsadas */
+.sidebar-left.collapsed .sidebar-content,
+.sidebar-left.collapsed .sidebar-title-expanded,
+.sidebar-right.collapsed .sidebar-content,
+.sidebar-right.collapsed .sidebar-title-expanded {
+    opacity: 0;
+    display: none;
 }
 
-.sidebar-right .sidebar-nav {
+/* Estilos para títulos expandidos */
+.sidebar-title-expanded {
+    color: #f2f2f2;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    background-color: #818181;
+    border-radius: 4px;
+    flex: none;
+}
+
+/* Contenido de las sidebars cuando NO están colapsadas */
+.sidebar-left .sidebar-content,
+.sidebar-right .sidebar-content {
+    flex: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    padding: 0.2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    height: 100%; /* Cambiar a 100% para usar toda la altura disponible del padre */
+    max-height: 100%; /* Limitar al 100% del contenedor padre */
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
 }
 
-.sidebar-right .sidebar-btn {
-    background: none;
-    border: 1px solid #555;
-    color: #f2f2f2;
-    padding: 0.8rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.2s ease;
-    font-size: 0.85rem;
+/* Grid de estadísticas para la sidebar derecha */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 280px; /* Reducir un poco la altura */
+  gap: 0.8rem; /* Reducir gap */
+  width: 100%;
+  padding: 0.3rem; /* Reducir padding */
+  box-sizing: border-box;
+  height: auto; /* Permitir que se ajuste al contenido */
+  min-height: 0;
 }
 
-.sidebar-right .collapse-button {
-  align-self: flex-start; /* A la izquierda para sidebar derecha */
+.stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2a3176;
+  border-radius: 8px;
+  padding: 0.8rem; /* Reducir padding */
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 280px; /* Reducir altura */
+  width: 100%;
+  min-height: 280px;
 }
+
+.stat-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 90%; /* Reducir un poco para mejor ajuste */
+  height: 90%;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
+}
+
 
