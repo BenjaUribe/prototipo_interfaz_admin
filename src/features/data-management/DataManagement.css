@@ -73,6 +73,7 @@
     display: flex;
     flex: 1;
     gap: 0;
+    overflow: hidden; /* Evita que los hijos se desborden */
 }
 
 .data-container {
@@ -139,10 +140,12 @@
 /* Estilos cuando están expandidas */
 .sidebar-left:not(.collapsed),
 .sidebar-right:not(.collapsed) {
-    width: 90%;
+    width: 100%;
+    max-width: 1350px; /* Máximo ancho para la sidebar derecha */
     flex-shrink: 0;
     max-height: calc(100vh - 120px); /* Limitar la altura máxima de la sidebar */
-    overflow: hidden; /* Ocultar overflow de la sidebar */
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* Estados colapsados */
@@ -190,7 +193,7 @@
     justify-content: flex-start;
     align-items: stretch;
     gap: 0;
-    height: 100%; /* Cambiar a 100% para usar toda la altura disponible del padre */
+    height: 90%; /* Cambiar a 100% para usar toda la altura disponible del padre */
     max-height: 100%; /* Limitar al 100% del contenedor padre */
     box-sizing: border-box;
     overflow-y: auto;
@@ -207,7 +210,6 @@
   width: 100%;
   padding: 0.3rem; /* Reducir padding */
   box-sizing: border-box;
-  height: auto; /* Permitir que se ajuste al contenido */
   min-height: 0;
 }
 
