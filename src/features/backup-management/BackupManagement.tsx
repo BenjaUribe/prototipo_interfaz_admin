@@ -3,7 +3,7 @@ import './BackupManagement.css';
 const BackupManagement = () => {
   return (
     <div className="feature-container">
-      <div className="contenedor">
+      <div className="Backup-contenedor">
         <div>
             <h3 className="titulo">Tabla de respaldos</h3>
           </div>
