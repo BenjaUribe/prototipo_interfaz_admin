@@ -3,7 +3,7 @@
     flex-direction: column;
     height: 100%;
     background-color: #1d1d1b;
-    border: 1px solid #f2f2f2;
+    border: 3px solid #343434;
     border-radius: 5px;
 }
 
@@ -14,7 +14,7 @@
     align-items: center;
     padding: 0.5rem 1rem;
     background-color: #1d1d1b;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 3px solid #343434;
     border-radius: 5px 5px 0 0;
     height: 50px;
     flex-shrink: 0;
@@ -53,7 +53,7 @@
 
 .toolbar-button {
     background: none;
-    border: 1px solid #f2f2f2;
+    border: 3px solid #818181;
     padding: 0.4rem 0.8rem;
     border-radius: 4px;
     cursor: pointer;
@@ -88,7 +88,7 @@
     transition: all 0.3s ease;
 }
 
-/* Reglas de ocultación para el contenido central */
+/* Reglas de ocultaciÃ³n para el contenido central */
 .data-feature:has(.sidebar-left:not(.collapsed)) .data-container,
 .data-feature:has(.sidebar-right:not(.collapsed)) .data-container {
     width: 0;
@@ -128,22 +128,22 @@
 }
 
 .sidebar-left {
-    border-right: 1px solid #f2f2f2;
+    border-right: 3px solid #f2f2f2;
     order: 1;
 }
 
 .sidebar-right {
-    border-left: 1px solid #f2f2f2;
+    border-left: 3px solid #f2f2f2;
     order: 3;
 }
 
-/* Estilos cuando están expandidas */
+/* Estilos cuando estÃ¡n expandidas */
 .sidebar-left:not(.collapsed),
 .sidebar-right:not(.collapsed) {
     width: 100%;
-    max-width: 1350px; /* Máximo ancho para la sidebar derecha */
+    max-width: 1350px; /* MÃ¡ximo ancho para la sidebar derecha */
     flex-shrink: 0;
-    max-height: calc(100vh - 120px); /* Limitar la altura máxima de la sidebar */
+    max-height: calc(100vh - 120px); /* Limitar la altura mÃ¡xima de la sidebar */
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -159,7 +159,7 @@
     position: relative;
 }
 
-/* Ocultar contenido cuando están colapsadas */
+/* Ocultar contenido cuando estÃ¡n colapsadas */
 .sidebar-left.collapsed .sidebar-content,
 .sidebar-left.collapsed .sidebar-title-expanded,
 .sidebar-right.collapsed .sidebar-content,
@@ -168,7 +168,7 @@
     display: none;
 }
 
-/* Estilos para títulos expandidos */
+/* Estilos para tÃ­tulos expandidos */
 .sidebar-title-expanded {
     color: #f2f2f2;
     font-size: 1rem;
@@ -176,12 +176,12 @@
     text-align: center;
     padding: 0.5rem 0;
     margin-bottom: 0.5rem;
-    background-color: #818181;
+    background-color: #2a3176;
     border-radius: 4px;
     flex: none;
 }
 
-/* Contenido de las sidebars cuando NO están colapsadas */
+/* Contenido de las sidebars cuando NO estÃ¡n colapsadas */
 .sidebar-left .sidebar-content,
 .sidebar-right .sidebar-content {
     flex: 1;
@@ -201,7 +201,7 @@
     min-height: 0;
 }
 
-/* Grid de estadísticas para la sidebar derecha */
+/* Grid de estadÃ­sticas para la sidebar derecha */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

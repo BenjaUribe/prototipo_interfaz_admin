@@ -9,19 +9,19 @@ interface SidebarProps {
 }
 
 const navigationItems = [
-  { id: 'data-management' as ActiveView, title: 'Gestión de datos', shortName: 'GD' },
-  { id: 'media-management' as ActiveView, title: 'Gestión de medios de prensa', shortName: 'GM' },
+  { id: 'data-management' as ActiveView, title: 'GestiÃ³n de datos', shortName: 'GD' },
+  { id: 'media-management' as ActiveView, title: 'GestiÃ³n de medios', shortName: 'GM' },
   { id: 'scraping-config' as ActiveView, title: 'Configurar Scraping', shortName: 'CS' },
-  { id: 'error-notifications' as ActiveView, title: 'Notificación de errores', shortName: 'NE' },
-  { id: 'backup-management' as ActiveView, title: 'Gestión de respaldos', shortName: 'GR' },
-  { id: 'user-management' as ActiveView, title: 'Gestión de usuarios', shortName: 'GU' },
+  { id: 'error-notifications' as ActiveView, title: 'NotificaciÃ³n de errores', shortName: 'NE' },
+  { id: 'backup-management' as ActiveView, title: 'GestiÃ³n de respaldos', shortName: 'GR' },
+  { id: 'user-management' as ActiveView, title: 'GestiÃ³n de usuarios', shortName: 'GU' },
 ];
 
 const Sidebar = ({ activeView, onViewChange, collapsed, onToggleCollapse }: SidebarProps) => {
   return (
     <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
       <button className="collapse-btn" onClick={onToggleCollapse}>
-        {collapsed ? '»' : '«'}
+        {collapsed ? 'Â»' : 'Â«'}
       </button>
       
       <nav className="navigation">
