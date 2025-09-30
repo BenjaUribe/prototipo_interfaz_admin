@@ -141,7 +141,7 @@
 .sidebar-left:not(.collapsed),
 .sidebar-right:not(.collapsed) {
     width: 100%;
-    max-width: 1350px; /* MÃ¡ximo ancho para la sidebar derecha */
+    max-width: 1295px; /* MÃ¡ximo ancho para la sidebar derecha */
     flex-shrink: 0;
     max-height: calc(100vh - 120px); /* Limitar la altura mÃ¡xima de la sidebar */
     overflow: hidden;
