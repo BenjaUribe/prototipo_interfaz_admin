@@ -3,8 +3,6 @@
     flex-direction: column;
     height: 100%;
     background-color: #1d1d1b;
-    border: 3px solid #343434;
-    border-radius: 5px;
 }
 
 /* Nueva barra de herramientas superior */
@@ -140,8 +138,8 @@
 /* Estilos cuando estÃ¡n expandidas */
 .sidebar-left:not(.collapsed),
 .sidebar-right:not(.collapsed) {
-    width: 100%;
-    max-width: 1295px; /* MÃ¡ximo ancho para la sidebar derecha */
+    width: 93%;
+    max-width: 93%; /* MÃ¡ximo ancho para la sidebar derecha */
     flex-shrink: 0;
     max-height: calc(100vh - 120px); /* Limitar la altura mÃ¡xima de la sidebar */
     overflow: hidden;
