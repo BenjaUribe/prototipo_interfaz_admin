@@ -48,7 +48,6 @@
 .tabla td {
   border: 3px solid #343434;
   padding: 10px;
-  overflow-y: auto;
 }
 
 .tabla th {
