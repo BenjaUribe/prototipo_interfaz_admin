@@ -3,12 +3,12 @@ import './BackupManagement.css';
 const BackupManagement = () => {
   return (
     <div className="feature-container">
-      <div className="Backup-contenedor">
+      <div className="Backup-container">
         <div>
-            <h3 className="titulo">Tabla de respaldos</h3>
+            <h3 className="Backup-title">Tabla de respaldos</h3>
           </div>
-        <div className='tabla-container'>
-        <table className="tabla">
+        <div className='Backup-table-container'>
+        <table className="Backup-table">
           <thead>
             <tr>
               <th>Fecha respaldo</th>
@@ -34,9 +34,9 @@ const BackupManagement = () => {
           </tbody>
           </table>
         </div>
-        <div className="acciones">
-          <button className="btn">Importar Respaldo</button>
-          <button className="btn">Crear Respaldo</button>
+        <div className="Backup-actions">
+          <button className="Backup-btn ">Importar Respaldo</button>
+          <button className="Backup-btn ">Crear Respaldo</button>
         </div>
       </div>
     </div>
