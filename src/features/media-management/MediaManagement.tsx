@@ -12,11 +12,11 @@ const MediaManagement = () => {
           <table className="media-table">
             <thead>
               <tr>
-                <th>Nombre del Medio</th>
+                <th>Nombre</th>
                 <th>URL</th>
-                <th>Pais</th>
-                <th>Categoria</th>
-                <th>Descripcion</th>
+                <th>País</th>
+                <th>Categoría</th>
+                <th>Descripción</th>
               </tr>
             </thead>
             <tbody>
@@ -44,9 +44,9 @@ const MediaManagement = () => {
               <form className="media-form">
                 <input type="text" placeholder="Nombre medio" />
                 <input type="text" placeholder="URL" />
-                <input type="text" placeholder="País" />
-                <input type="text" placeholder="Categoría" />
-                <input type="text" placeholder="Descripción" />
+                <input type="text" placeholder="PaÃ­s" />
+                <input type="text" placeholder="CategorÃ­a" />
+                <input type="text" placeholder="DescripciÃ³n" />
                 <button className="media-btn" onClick={() => setShowModal(false)}>
                   Guardar
                 </button>

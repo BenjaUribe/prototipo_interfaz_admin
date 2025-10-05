@@ -1,3 +1,8 @@
+/* Scrollbar para navegadores modernos */
+.content, .layout, .feature-container {
+  scrollbar-width: thin;
+  scrollbar-color: #44cfe2 #1d1d1d;
+}
 .layout {
   display: flex;
   flex-direction: column;
@@ -41,7 +46,11 @@
 
 /* Personalización global de scrollbar (opcional) */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
+}
+.content, .layout, .feature-container {
+  scrollbar-width: thin;
+  scrollbar-color: #44cfe2 #1d1d1d;
 }
 
 ::-webkit-scrollbar-track {
@@ -50,15 +59,15 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a3176;
+  background: #44cfe2;
   border-radius: 6px;
   border: 2px solid #1d1d1d;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3176;
+  background: #44cfe2;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #2a3176;
+  background: #44cfe2;
 }

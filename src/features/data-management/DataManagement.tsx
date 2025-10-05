@@ -24,7 +24,7 @@ const DataManagement = () => {
           >
             {leftSidebarCollapsed ? '>' : '<'}
           </button>
-          <span className="toolbar-label">Corrección de errores</span>
+          <span className="toolbar-label">Correcciones</span>
         </div>
 
         <div className="toolbar-center">
@@ -32,7 +32,7 @@ const DataManagement = () => {
         </div>
 
         <div className="toolbar-section toolbar-section-right">
-          <span className="toolbar-label">Estadísticas</span>
+          <span className="toolbar-label">Estadí­sticas</span>
           <button 
             className='toolbar-button' 
             onClick={() => {
@@ -43,7 +43,7 @@ const DataManagement = () => {
                 setRightSidebarCollapsed(true);
               }
             }}
-            title={rightSidebarCollapsed ? "Mostrar estadísticas" : "Ocultar estadísticas"}
+            title={rightSidebarCollapsed ? "Mostrar estadí­sticas" : "Ocultar estadí­sticas"}
           >
             {rightSidebarCollapsed ? '<' : '>'}
           </button>
@@ -53,9 +53,9 @@ const DataManagement = () => {
       {/* Container principal */}
       <div className="main-content">
         <aside className={`sidebar-left ${leftSidebarCollapsed ? 'collapsed' : ''}`}>        
-          {/* Solo mostrar título cuando NO está colapsada */}
+          {/* Solo mostrar tÃ­tulo cuando NO estÃ¡ colapsada */}
           {!leftSidebarCollapsed && (
-            <div className='sidebar-title-expanded'>Corrección de errores</div>
+            <div className='sidebar-title-expanded'>Corregir errores</div>
           )}
           
           <div className='sidebar-content'>
@@ -70,31 +70,31 @@ const DataManagement = () => {
         </div>
 
         <aside className={`sidebar-right ${rightSidebarCollapsed ? 'collapsed' : ''}`}>
-          {/* Solo mostrar título cuando NO está colapsada */}
+          {/* Solo mostrar tÃ­tulo cuando NO estÃ¡ colapsada */}
           {!rightSidebarCollapsed && (
-            <div className='sidebar-title-expanded'>Estadísticas</div>
+            <div className='sidebar-title-expanded'>Estadí­sticas</div>
           )}
 
           <div className='sidebar-content'>
             <div className="stats-grid">
               <div className="stat-item">
-                {/* Aquí pondrás tu imagen 1 */}
-                <img src="src/features/data-management/data/grafico1.svg" alt="Gráfico 1" className="stat-image" />
+                {/* AquÃ­ pondrÃ¡s tu imagen 1 */}
+                <img src="src/features/data-management/data/grafico1.svg" alt="GrÃ¡fico 1" className="stat-image" />
               </div>
               
               <div className="stat-item">
-                {/* Aquí pondrás tu imagen 2 */}
-                <img src="src/features/data-management/data/grafico2.svg" alt="Gráfico 2" className="stat-image" />
+                {/* AquÃ­ pondrÃ¡s tu imagen 2 */}
+                <img src="src/features/data-management/data/grafico2.svg" alt="GrÃ¡fico 2" className="stat-image" />
               </div>
               
               <div className="stat-item">
-                {/* Aquí pondrás tu imagen 3 */}
-                <img src="src/features/data-management/data/grafico3.svg" alt="Gráfico 3" className="stat-image" />
+                {/* AquÃ­ pondrÃ¡s tu imagen 3 */}
+                <img src="src/features/data-management/data/grafico3.svg" alt="GrÃ¡fico 3" className="stat-image" />
               </div>
               
               <div className="stat-item">
-                {/* Aquí pondrás tu imagen 4 */}
-                <img src="src/features/data-management/data/grafico4.svg" alt="Gráfico 4" className="stat-image" />
+                {/* AquÃ­ pondrÃ¡s tu imagen 4 */}
+                <img src="src/features/data-management/data/grafico4.svg" alt="GrÃ¡fico 4" className="stat-image" />
               </div>
             </div>
           </div>
