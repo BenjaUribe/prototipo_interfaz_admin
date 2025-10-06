@@ -22,7 +22,7 @@ const BackupManagement = () => {
       </thead>
 
       <tbody>
-        {Array.from({ length: 15 }).map((_, idx) => (
+        {Array.from({ length: 50 }).map((_, idx) => (
           <tr key={idx}>
             <td>10-01-2025</td>
             <td>Noticias</td>
