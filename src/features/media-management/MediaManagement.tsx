@@ -7,15 +7,23 @@ const MediaManagement = () => {
   return (
     <div className="feature-container">
       <div className="media-container">
-        <h1>Medios de Prensa</h1>
+        <div className="media-header"> 
+          <h1 className="media-title">Medios de Prensa</h1>
+          <div className="media-actions">
+            <button className="media-btn" onClick={() => setShowModal(true)}>
+              Agregar Medio
+            </button>
+            <button className="media-btn">Borrar todo</button>
+          </div>
+        </div>
         <div className="media-table-container">
           <table className="media-table">
             <thead>
               <tr>
                 <th>Nombre</th>
                 <th>URL</th>
-                <th>País</th>
-                <th>Categoría</th>
+                <th>Paí­s</th>
+                <th>Categorí­a</th>
                 <th>Descripción</th>
               </tr>
             </thead>
@@ -32,21 +40,15 @@ const MediaManagement = () => {
             </tbody>
           </table>
         </div>
-        <div className="media-actions">
-          <button className="media-btn" onClick={() => setShowModal(true)}>
-            Agregar Medio
-          </button>
-          <button className="media-btn">Borrar todo</button>
-        </div>
         {showModal && (
           <div className="modal-overlay">
             <div className="modal-content">
               <form className="media-form">
                 <input type="text" placeholder="Nombre medio" />
                 <input type="text" placeholder="URL" />
-                <input type="text" placeholder="PaÃ­s" />
-                <input type="text" placeholder="CategorÃ­a" />
-                <input type="text" placeholder="DescripciÃ³n" />
+                <input type="text" placeholder="Paí­s" />
+                <input type="text" placeholder="Categorí­a" />
+                <input type="text" placeholder="Descripción" />
                 <button className="media-btn" onClick={() => setShowModal(false)}>
                   Guardar
                 </button>

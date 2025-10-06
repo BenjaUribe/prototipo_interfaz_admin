@@ -6,14 +6,29 @@
   flex-direction: column;
 }
 
-.titulo {
+.Backup-header {
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center; 
+  width: 100%; 
+  padding: 15px 20px; 
+}
+
+.Backup-title {
+  width: 100%;
   font-size: 2rem;
   font-weight: 800;
-  text-align: center;
+  text-align: center; 
   margin: 0;
   color: #f2f2f2;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  position: relative;
+}
+
+.Backup-actions {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
 }
 
 .Backup-table-container {
@@ -22,7 +37,7 @@
   border-top: 3px solid #818181;
   border-bottom: 3px solid #818181;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 2px;
 }
 
 .Backup-table{
@@ -33,11 +48,10 @@
   text-align: center;
 }
 
-.tabla th,
-.tabla td {
+.Backup-table th,
+.Backup-table td {
   border-top: 3px solid #343434;
   border-bottom: 3px solid #343434;
-  padding: 5px;
 }
 
 .Backup-table th {
@@ -45,15 +59,8 @@
   border: 0px solid #2a3176;
   font-weight: bold;  
   position: sticky;
+  padding: 5px;
   top: 0;
-}
-
-.Backup-actions {
-  margin-top: auto;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 20px;
-  gap: 15px;
 }
 
 .Backup-btn {
@@ -64,7 +71,7 @@
   cursor: pointer;
 }
 
-.btn:hover {
+.Backup-btn:hover {
   background-color: #2a3176;
 }
 

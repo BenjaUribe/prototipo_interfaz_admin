@@ -8,7 +8,7 @@ const ErrorNotifications = () => {
   
 return (
     <div className="feature-container">
-      <h1>Notificación de errores</h1>
+      <h2>Notificación de errores</h2>
         <div className="tabs">
           <div className="tab-list">
             <button 
@@ -33,7 +33,7 @@ return (
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Descripcion</th>
+                    <th>Descripción</th>
                 </tr>
                 </thead>
                 <tbody>

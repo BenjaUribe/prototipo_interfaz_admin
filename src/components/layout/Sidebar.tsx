@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { ActiveView } from '../../types/navigation';
 import './Sidebar.css';
 
@@ -18,21 +19,33 @@ const navigationItems = [
 ];
 
 const Sidebar = ({ activeView, onViewChange, collapsed, onToggleCollapse }: SidebarProps) => {
+  const [isExpanding, setIsExpanding] = useState(false);
+
+  const handleToggleCollapse = () => {
+    if (collapsed) {
+      setIsExpanding(true);
+      setTimeout(() => setIsExpanding(false), 300); 
+    }
+    onToggleCollapse();
+  };
+
   return (
     <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-      <button className="collapse-btn" onClick={onToggleCollapse}>
-        {collapsed ? '»' : '«'}
+      <button className="collapse-btn" onClick={handleToggleCollapse}>
+        {collapsed ? '\u00bb' : '\u00ab'}
       </button>
-      
+
       <nav className="navigation">
         {navigationItems.map((item) => (
           <button
             key={item.id}
-            className={`nav-button ${activeView === item.id ? 'active' : ''}`}
+            className={`nav-button ${activeView === item.id ? 'active' : ''} ${isExpanding ? 'expanding' : ''}`}
             onClick={() => onViewChange(item.id)}
-            title={collapsed ? item.title : undefined}
+            title={item.title} // Mostrar título completo como tooltip
           >
-            {collapsed ? item.shortName : item.title}
+            <span className="button-text">
+              {collapsed ? item.shortName : item.title}
+            </span>
           </button>
         ))}
       </nav>
