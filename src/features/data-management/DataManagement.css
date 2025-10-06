@@ -141,6 +141,7 @@
     max-height: calc(100vh - 120px);
     overflow: hidden;
     box-sizing: border-box;
+
 }
 
 /* Sidebars colapsadas */
